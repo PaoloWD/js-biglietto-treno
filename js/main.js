@@ -1,13 +1,21 @@
 const km = prompt("Inserisci il numero di km che vuoi percorrere");
 const age = prompt("inserisci la tua età e non imbrogliare per favore");
 const ticketPrice = (km * 0.21).toFixed(2);
+let ticketPriceSale;
 
 if (age < 18) {
-  let ticketPriceSale = (ticketPrice * 0.8).toFixed(2);
-  console.log(ticketPriceSale);
+  ticketPriceSale = (ticketPrice * 0.8).toFixed(2);
+  const prezzo = document.getElementById("prezzo");
+  prezzo.innerHTML = ` ${ticketPriceSale}. Hai usufruito di uno sconto del 20%!`;
 } else if (age >= 18 && age <= 65) {
-  console.log(ticketPrice);
+  ticketPriceSale = ticketPrice;
+  const prezzo = document.getElementById("prezzo");
+  prezzo.innerHTML = ` ${ticketPriceSale}. Non hai diritto ad uno sconto`;
 } else {
-  let ticketPriceSale = (ticketPrice * 0.6).toFixed(2);
-  console.log(ticketPriceSale);
+  ticketPriceSale = (ticketPrice * 0.6).toFixed(2);
+  const prezzo = document.getElementById("prezzo");
+  prezzo.innerHTML = ` ${ticketPriceSale}. Hai usufruito di uno sconto del 40%!`;
 }
+
+const km_utente = document.getElementById("km_utente");
+km_utente.innerHTML = km;
