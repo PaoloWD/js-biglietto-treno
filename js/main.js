@@ -1,5 +1,12 @@
 const km = prompt("Inserisci il numero di km che vuoi percorrere");
 const age = prompt("inserisci la tua età e non imbrogliare per favore");
+//validiamo i dati inseriti
+if (isNaN(km)) {
+  alert("I km non sono validi");
+}
+if (isNaN(age)) {
+  alert("L'età inserita non è valida");
+}
 const ticketPrice = (km * 0.21).toFixed(2);
 let ticketPriceSale;
 
